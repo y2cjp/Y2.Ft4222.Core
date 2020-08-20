@@ -8,9 +8,9 @@
     <Product>Y2.Ft4222.Core</Product>
     <PackageId>Y2.Ft4222.Core</PackageId>
     <Copyright>Copyright (C) 2020 Y2 Corporation</Copyright>
-    <Version>1.0.0</Version>
-    <AssemblyVersion>0.1.0.0</AssemblyVersion>
-    <FileVersion>0.1.0.0</FileVersion>
+    <Version>1.0.1</Version>
+    <AssemblyVersion>0.1.0.1</AssemblyVersion>
+    <FileVersion>0.1.0.1</FileVersion>
     <Description>USB2.0 to I2C Drivers for FT4222.</Description>
     <PackageTags>USB, I2C, .NET, Core, FT4222H, FTDI, IoT</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
@@ -18,6 +18,16 @@
     <PackageIcon>y2.png</PackageIcon>
     <RepositoryUrl>https://github.com/y2cjp/Y2.Ft4222.Core</RepositoryUrl>
     <PackageProjectUrl>https://github.com/y2cjp/Y2.Ft4222.Core</PackageProjectUrl>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>..\src\Y2.Ft4222.Core.xml</DocumentationFile>
+    <NoWarn>1701;1702; 1591</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>..\src\Y2.Ft4222.Core.xml</DocumentationFile>
+    <NoWarn>1701;1702; 1591</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>

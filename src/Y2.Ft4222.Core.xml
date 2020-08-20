@@ -1,0 +1,1396 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Y2.Ft4222.Core</name>
+    </assembly>
+    <members>
+        <member name="T:Y2.Ft4222.Core.Ft4222I2cConnectionSettings">
+            <summary>The connection settings of a device on an I2C bus.</summary>
+        </member>
+        <member name="M:Y2.Ft4222.Core.Ft4222I2cConnectionSettings.#ctor(System.Int32,System.Int32,System.UInt32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Y2.Ft4222.Core.Ft4222I2cConnectionSettings" /> class.
+            </summary>
+            <param name="busId">The bus ID the I2C device is connected to.</param>
+            <param name="deviceAddress">The bus address of the I2C device.</param>
+            <param name="frequencyKbps">The speed of I2C transmission.</param>
+        </member>
+        <member name="M:Y2.Ft4222.Core.Ft4222I2cConnectionSettings.#ctor(System.Device.I2c.I2cConnectionSettings,System.UInt32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Y2.Ft4222.Core.Ft4222I2cConnectionSettings" /> class.
+            </summary>
+            <param name="i2cConnectionSettings">The I2C connection settings.</param>
+            <param name="frequencyKbps">The speed of I2C transmission.</param>
+        </member>
+        <member name="P:Y2.Ft4222.Core.Ft4222I2cConnectionSettings.I2cConnectionSettings">
+            <summary>
+            The connection settings of a device on an I2C bus.
+            </summary>
+        </member>
+        <member name="P:Y2.Ft4222.Core.Ft4222I2cConnectionSettings.FrequencyKbps">
+            <summary>
+            The bus frequency of the I2C device.
+            </summary>
+        </member>
+        <member name="P:Y2.Ft4222.Core.Ft4222I2cConnectionSettings.BusId">
+            <summary>
+            The bus ID the I2C device is connected to.
+            </summary>
+        </member>
+        <member name="P:Y2.Ft4222.Core.Ft4222I2cConnectionSettings.DeviceAddress">
+            <summary>
+            The bus address of the I2C device.
+            </summary>
+        </member>
+        <member name="T:Y2.Ft4222.Core.Ft4222I2cMaster">
+            <summary>
+            FT4222 I2C Master Device
+            </summary>
+        </member>
+        <member name="M:Y2.Ft4222.Core.Ft4222I2cMaster.#ctor(Y2.Ft4222.Core.Ft4222I2cConnectionSettings)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Y2.Ft4222.Core.Ft4222I2cMaster"/> class.
+            </summary>
+            <param name="settings">I2C Connection Settings</param>
+        </member>
+        <member name="M:Y2.Ft4222.Core.Ft4222I2cMaster.Read(System.Int32,System.Span{System.Byte})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Y2.Ft4222.Core.Ft4222I2cMaster.Write(System.Int32,System.ReadOnlySpan{System.Byte})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Y2.Ft4222.Core.Ft4222I2cMaster.ReadEx(Iot.Device.Ft4222.I2cMasterFlag,System.Span{System.Byte})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Y2.Ft4222.Core.Ft4222I2cMaster.ReadEx(System.Int32,Iot.Device.Ft4222.I2cMasterFlag,System.Span{System.Byte})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Y2.Ft4222.Core.Ft4222I2cMaster.WriteEx(Iot.Device.Ft4222.I2cMasterFlag,System.ReadOnlySpan{System.Byte})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Y2.Ft4222.Core.Ft4222I2cMaster.WriteEx(System.Int32,Iot.Device.Ft4222.I2cMasterFlag,System.ReadOnlySpan{System.Byte})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Y2.Ft4222.Core.Ft4222I2cMaster.Reset">
+            <inheritdoc/>
+        </member>
+        <member name="M:Y2.Ft4222.Core.Ft4222I2cMaster.GetStatus">
+            <inheritdoc/>
+        </member>
+        <member name="M:Y2.Ft4222.Core.Ft4222I2cMaster.GetVersionValues">
+            <inheritdoc/>
+        </member>
+        <member name="M:Y2.Ft4222.Core.Ft4222I2cMaster.Dispose(System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Y2.Ft4222.Core.Ft4222I2cSlaveDevice">
+            <summary>
+            FT4222 I2C Slave Device
+            </summary>
+        </member>
+        <member name="M:Y2.Ft4222.Core.Ft4222I2cSlaveDevice.#ctor(Y2.Ft4222.Core.IFt4222I2cMaster,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Y2.Ft4222.Core.Ft4222I2cSlaveDevice"/> class.
+            </summary>
+            <param name="i2cMaster">The I2C master device.</param>
+            <param name="slaveAddress">The bus address of the I2C device.</param>
+        </member>
+        <member name="M:Y2.Ft4222.Core.Ft4222I2cSlaveDevice.Read(System.Span{System.Byte})">
+            <summary>Reads data from the I2C device.</summary>
+            <param name="buffer">The buffer to read the data from the I2C device.</param>
+        </member>
+        <member name="M:Y2.Ft4222.Core.Ft4222I2cSlaveDevice.Write(System.ReadOnlySpan{System.Byte})">
+            <summary>Writes data to the I2C device.</summary>
+            <param name="buffer">The buffer that contains the data to be written to the I2C device.</param>
+        </member>
+        <member name="M:Y2.Ft4222.Core.Ft4222I2cSlaveDevice.ReadEx(Iot.Device.Ft4222.I2cMasterFlag,System.Span{System.Byte})">
+            <summary>Reads data from the I2C device.</summary>
+            <param name="flags">flags</param>
+            <param name="buffer">The buffer to read the data from the I2C device.</param>
+        </member>
+        <member name="M:Y2.Ft4222.Core.Ft4222I2cSlaveDevice.WriteEx(Iot.Device.Ft4222.I2cMasterFlag,System.ReadOnlySpan{System.Byte})">
+            <summary>Writes data to the I2C device.</summary>
+            <param name="flags">flags</param>
+            <param name="buffer">The buffer that contains the data to be written to the I2C device.</param>
+        </member>
+        <member name="T:Y2.Ft4222.Core.IFt4222I2cMaster">
+            <summary>
+            Interface for a FT4222 I2C Master Device
+            </summary>
+        </member>
+        <member name="P:Y2.Ft4222.Core.IFt4222I2cMaster.FrequencyKbps">
+            <summary>The speed of I2C transmission.</summary>
+        </member>
+        <member name="M:Y2.Ft4222.Core.IFt4222I2cMaster.Read(System.Span{System.Byte})">
+            <summary>Reads data from the I2C device.</summary>
+            <param name="buffer">The buffer to read the data from the I2C device.</param>
+        </member>
+        <member name="M:Y2.Ft4222.Core.IFt4222I2cMaster.Read(System.Int32,System.Span{System.Byte})">
+            <summary>Reads data from the I2C device.</summary>
+            <param name="slaveAddress">The bus address of the I2C device.</param>
+            <param name="buffer">The buffer to read the data from the I2C device.</param>
+        </member>
+        <member name="M:Y2.Ft4222.Core.IFt4222I2cMaster.Write(System.ReadOnlySpan{System.Byte})">
+            <summary>Writes data to the I2C device.</summary>
+            <param name="buffer">The buffer that contains the data to be written to the I2C device.</param>
+        </member>
+        <member name="M:Y2.Ft4222.Core.IFt4222I2cMaster.Write(System.Int32,System.ReadOnlySpan{System.Byte})">
+            <summary>Writes data to the I2C device.</summary>
+            <param name="slaveAddress">The bus address of the I2C device.</param>
+            <param name="buffer">The buffer that contains the data to be written to the I2C device.</param>
+        </member>
+        <member name="M:Y2.Ft4222.Core.IFt4222I2cMaster.ReadEx(Iot.Device.Ft4222.I2cMasterFlag,System.Span{System.Byte})">
+            <summary>Reads data from the I2C device.</summary>
+            <param name="flags">flags</param>
+            <param name="buffer">The buffer to read the data from the I2C device.</param>
+        </member>
+        <member name="M:Y2.Ft4222.Core.IFt4222I2cMaster.ReadEx(System.Int32,Iot.Device.Ft4222.I2cMasterFlag,System.Span{System.Byte})">
+            <summary>Reads data from the I2C device.</summary>
+            <param name="slaveAddress">The bus address of the I2C device.</param>
+            <param name="flags">flags</param>
+            <param name="buffer">The buffer to read the data from the I2C device.</param>
+        </member>
+        <member name="M:Y2.Ft4222.Core.IFt4222I2cMaster.WriteEx(Iot.Device.Ft4222.I2cMasterFlag,System.ReadOnlySpan{System.Byte})">
+            <summary>Writes data to the I2C device.</summary>
+            <param name="flags">flags</param>
+            <param name="buffer">The buffer that contains the data to be written to the I2C device.</param>
+        </member>
+        <member name="M:Y2.Ft4222.Core.IFt4222I2cMaster.WriteEx(System.Int32,Iot.Device.Ft4222.I2cMasterFlag,System.ReadOnlySpan{System.Byte})">
+            <summary>Writes data to the I2C device.</summary>
+            <param name="slaveAddress">The bus address of the I2C device.</param>
+            <param name="flags">flags</param>
+            <param name="buffer">The buffer that contains the data to be written to the I2C device.</param>
+        </member>
+        <member name="M:Y2.Ft4222.Core.IFt4222I2cMaster.Reset">
+            <summary>Reset I2C as a master</summary>
+        </member>
+        <member name="M:Y2.Ft4222.Core.IFt4222I2cMaster.GetStatus">
+            <summary>Get the I2C status as a master</summary>
+            <returns>controller status</returns>
+        </member>
+        <member name="M:Y2.Ft4222.Core.IFt4222I2cMaster.GetVersions">
+            <summary>Get the version of the chip and dll</summary>
+            <returns>version</returns>
+        </member>
+        <member name="M:Y2.Ft4222.Core.IFt4222I2cMaster.GetVersionValues">
+            <summary>Get the version of the chip and dll</summary>
+            <returns>version</returns>
+        </member>
+        <member name="T:Iot.Device.Ft4222.DeviceInformation">
+            <summary>
+            FT4222 device information
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ft4222.DeviceInformation.Flags">
+            <summary>
+            Indicates device state.  Can be any combination of the following: FT_FLAGS_OPENED, FT_FLAGS_HISPEED
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ft4222.DeviceInformation.Type">
+            <summary>
+            Indicates the device type.  Can be one of the following: FT_DEVICE_232R, FT_DEVICE_2232C, FT_DEVICE_BM, FT_DEVICE_AM, FT_DEVICE_100AX or FT_DEVICE_UNKNOWN
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ft4222.DeviceInformation.Id">
+            <summary>
+            The Vendor ID and Product ID of the device
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ft4222.DeviceInformation.LocId">
+            <summary>
+            The physical location identifier of the device
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ft4222.DeviceInformation.SerialNumber">
+            <summary>
+            The device serial number
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ft4222.DeviceInformation.Description">
+            <summary>
+            The device description
+            </summary>
+        </member>
+        <member name="T:Iot.Device.Ft4222.Ft4222I2cEx">
+            <summary>
+            FT4222 I2C Device
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ft4222.Ft4222I2cEx.FtHandle">
+            <summary>Handle of the device.</summary>
+        </member>
+        <member name="P:Iot.Device.Ft4222.Ft4222I2cEx.FrequencyKbps">
+            <summary>The speed of I2C transmission.</summary>
+        </member>
+        <member name="P:Iot.Device.Ft4222.Ft4222I2cEx.DeviceInformation">
+            <summary>
+            Store the FTDI Device Information
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ft4222.Ft4222I2cEx.#ctor(Y2.Ft4222.Core.Ft4222I2cConnectionSettings)">
+            <summary>
+            Create a FT4222 I2C Device
+            </summary>
+            <param name="settings">I2C Connection Settings</param>
+        </member>
+        <member name="M:Iot.Device.Ft4222.Ft4222I2cEx.#ctor(System.Device.I2c.I2cConnectionSettings,System.UInt32)">
+            <summary>
+            Create a FT4222 I2C Device
+            </summary>
+            <param name="settings">I2C Connection Settings</param>
+            <param name="frequencyKbps">The speed of I2C transmission.</param>
+        </member>
+        <member name="P:Iot.Device.Ft4222.Ft4222I2cEx.ConnectionSettings">
+            <inheritdoc/>
+        </member>
+        <member name="M:Iot.Device.Ft4222.Ft4222I2cEx.Read(System.Span{System.Byte})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Iot.Device.Ft4222.Ft4222I2cEx.ReadByte">
+            <inheritdoc/>
+        </member>
+        <member name="M:Iot.Device.Ft4222.Ft4222I2cEx.Write(System.ReadOnlySpan{System.Byte})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Iot.Device.Ft4222.Ft4222I2cEx.WriteByte(System.Byte)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Iot.Device.Ft4222.Ft4222I2cEx.WriteRead(System.ReadOnlySpan{System.Byte},System.Span{System.Byte})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Iot.Device.Ft4222.Ft4222I2cEx.GetVersions">
+            <summary>
+            Get the version of the chip and dll
+            </summary>
+            <returns>version</returns>
+        </member>
+        <member name="M:Iot.Device.Ft4222.Ft4222I2cEx.Dispose(System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Iot.Device.Ft4222.FtClockRate">
+            <summary>
+            System clock rate
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtClockRate.Clock60MHz">
+            <summary>
+            60 MHz
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtClockRate.Clock24MHz">
+            <summary>
+            24 MHz
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtClockRate.Clock48MHz">
+            <summary>
+            48 MHz
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtClockRate.Clock80MHz">
+            <summary>
+            80 MHz
+            </summary>
+        </member>
+        <member name="T:Iot.Device.Ft4222.FtCommon">
+            <summary>
+            Common static functions for the FT4222
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ft4222.FtCommon.GetDevices">
+            <summary>
+            Returns the list of FT4222 connected
+            </summary>
+            <returns>A list of devices connected</returns>
+        </member>
+        <member name="M:Iot.Device.Ft4222.FtCommon.GetVersions">
+            <summary>
+            Get the versions of the chipset and dll
+            </summary>
+            <returns>Both the chipset and dll versions</returns>
+        </member>
+        <member name="T:Iot.Device.Ft4222.FtDevice">
+            <summary>
+            List of FTDI device types
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtDevice.Ft232BOrFt245B">
+            <summary>
+            FT232B or FT245B device
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtDevice.Ft8U232AmOrFTtU245Am">
+            <summary>
+            FT8U232AM or FT8U245AM device
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtDevice.Ft8U100Ax">
+            <summary>
+            FT8U100AX device
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtDevice.UnknownDevice">
+            <summary>
+            Unknown device
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtDevice.Ft2232">
+            <summary>
+            FT2232 device
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtDevice.Ft232ROrFt245R">
+            <summary>
+            FT232R or FT245R device
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtDevice.Ft2232H">
+            <summary>
+            FT2232H device
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtDevice.Ft4232H">
+            <summary>
+            FT4232H device
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtDevice.Ft232H">
+            <summary>
+            FT232H device
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtDevice.FtXSeries">
+            <summary>
+            FT X-Series device
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtDevice.Ft4222HMode0or2With2Interfaces">
+            <summary>
+            FT4222 hi-speed device Mode 0 - 2 interfaces
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtDevice.Ft4222HMode1or2With4Interfaces">
+            <summary>
+            FT4222 hi-speed device Mode 1 or 2 - 4 interfaces
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtDevice.Ft4222HMode3With1Interface">
+            <summary>
+            FT4222 hi-speed device Mode 3 - 1 interface
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtDevice.Ft4222OtpProgrammerBoard">
+            <summary>
+            OTP programmer board for the FT4222.
+            </summary>
+        </member>
+        <member name="T:Iot.Device.Ft4222.FtFlag">
+            <summary>
+            Flags for the device status
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtFlag.PortOpened">
+            <summary>
+            Indicates that the device is open
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtFlag.HiSpeedMode">
+            <summary>
+            Indicates that the device is enumerated as a hi-speed USB device
+            </summary>
+        </member>
+        <member name="T:Iot.Device.Ft4222.FtFunction">
+            <summary>
+            Imports for the ftd2xx.dll as well as libft4222
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ft4222.FtFunction.FT_CreateDeviceInfoList(System.UInt32@)">
+            <summary>
+            Create Device Information List
+            </summary>
+            <param name="numdevs">number of devices</param>
+            <returns>The status</returns>
+        </member>
+        <member name="M:Iot.Device.Ft4222.FtFunction.FT_GetDeviceInfoDetail(System.UInt32,System.UInt32@,Iot.Device.Ft4222.FtDevice@,System.UInt32@,System.UInt32@,System.Byte@,System.Byte@,System.IntPtr@)">
+            <summary>
+            Get Device Information Detail
+            </summary>
+            <param name="index">Index of the device</param>
+            <param name="flags">Flags</param>
+            <param name="chiptype">Device type</param>
+            <param name="id">ID</param>
+            <param name="locid">Location ID</param>
+            <param name="serialnumber">Serial Number</param>
+            <param name="description">Description</param>
+            <param name="ftHandle">Handle</param>
+            <returns>The status</returns>
+        </member>
+        <member name="M:Iot.Device.Ft4222.FtFunction.FT_OpenEx(System.UInt32,Iot.Device.Ft4222.FtOpenType,Iot.Device.Ft4222.SafeFtHandle@)">
+            <summary>
+            Open a device
+            </summary>
+            <param name="pvArg1">The device element identifying the device, depends on the flag</param>
+            <param name="dwFlags">The flag how to open the device</param>
+            <param name="ftHandle">The handle of the open device</param>
+            <returns>The status</returns>
+        </member>
+        <member name="M:Iot.Device.Ft4222.FtFunction.FT_Close(Iot.Device.Ft4222.SafeFtHandle)">
+            <summary>
+            Close the device
+            </summary>
+            <param name="ftHandle">The device handle</param>
+            <returns>The status</returns>
+        </member>
+        <member name="M:Iot.Device.Ft4222.FtFunction.FT_CreateDeviceInfoListLinux(System.UInt32@)">
+            <summary>
+            Create Device Information List
+            </summary>
+            <param name="numdevs">number of devices</param>
+            <returns>The status</returns>
+        </member>
+        <member name="M:Iot.Device.Ft4222.FtFunction.FT_GetDeviceInfoDetailLinux(System.UInt32,System.UInt32@,Iot.Device.Ft4222.FtDevice@,System.UInt32@,System.UInt32@,System.Byte@,System.Byte@,System.IntPtr@)">
+            <summary>
+            Get Device Information Detail
+            </summary>
+            <param name="index">Index of the device</param>
+            <param name="flags">Flags</param>
+            <param name="chiptype">Device type</param>
+            <param name="id">ID</param>
+            <param name="locid">Location ID</param>
+            <param name="serialnumber">Serial Number</param>
+            <param name="description">Description</param>
+            <param name="ftHandle">Handle</param>
+            <returns>The status</returns>
+        </member>
+        <member name="M:Iot.Device.Ft4222.FtFunction.FT_OpenExLinux(System.UInt32,Iot.Device.Ft4222.FtOpenType,Iot.Device.Ft4222.SafeFtHandle@)">
+            <summary>
+            Open a device
+            </summary>
+            <param name="pvArg1">The device element identifying the device, depends on the flag</param>
+            <param name="dwFlags">The flag how to open the device</param>
+            <param name="ftHandle">The handle of the open device</param>
+            <returns>The status</returns>
+        </member>
+        <member name="M:Iot.Device.Ft4222.FtFunction.FT_CloseLinux(Iot.Device.Ft4222.SafeFtHandle)">
+            <summary>
+            Close the device
+            </summary>
+            <param name="ftHandle">The device handle</param>
+            <returns>The status</returns>
+        </member>
+        <member name="M:Iot.Device.Ft4222.FtFunction.FT_CreateDeviceInfoListWin(System.UInt32@)">
+            <summary>
+            Create Device Information List
+            </summary>
+            <param name="numdevs">number of devices</param>
+            <returns>The status</returns>
+        </member>
+        <member name="M:Iot.Device.Ft4222.FtFunction.FT_GetDeviceInfoDetailWin(System.UInt32,System.UInt32@,Iot.Device.Ft4222.FtDevice@,System.UInt32@,System.UInt32@,System.Byte@,System.Byte@,System.IntPtr@)">
+            <summary>
+            Get Device Information Detail
+            </summary>
+            <param name="index">Index of the device</param>
+            <param name="flags">Flags</param>
+            <param name="chiptype">Device type</param>
+            <param name="id">ID</param>
+            <param name="locid">Location ID</param>
+            <param name="serialnumber">Serial Number</param>
+            <param name="description">Description</param>
+            <param name="ftHandle">Handle</param>
+            <returns>The status</returns>
+        </member>
+        <member name="M:Iot.Device.Ft4222.FtFunction.FT_OpenExWin(System.UInt32,Iot.Device.Ft4222.FtOpenType,Iot.Device.Ft4222.SafeFtHandle@)">
+            <summary>
+            Open a device
+            </summary>
+            <param name="pvArg1">The device element identifying the device, depends on the flag</param>
+            <param name="dwFlags">The flag how to open the device</param>
+            <param name="ftHandle">The handle of the open device</param>
+            <returns>The status</returns>
+        </member>
+        <member name="M:Iot.Device.Ft4222.FtFunction.FT_CloseWin(Iot.Device.Ft4222.SafeFtHandle)">
+            <summary>
+            Close the device
+            </summary>
+            <param name="ftHandle">The device handle</param>
+            <returns>The status</returns>
+        </member>
+        <member name="M:Iot.Device.Ft4222.FtFunction.FT4222_UnInitialize(Iot.Device.Ft4222.SafeFtHandle)">
+            <summary>
+            Uninitialize a device, call before closing the device
+            </summary>
+            <param name="ftHandle">The handle of the open device</param>
+            <returns>The status</returns>
+        </member>
+        <member name="M:Iot.Device.Ft4222.FtFunction.FT4222_SetClock(Iot.Device.Ft4222.SafeFtHandle,Iot.Device.Ft4222.FtClockRate)">
+            <summary>
+            Set the device system clock
+            </summary>
+            <param name="ftHandle">The handle of the open device</param>
+            <param name="clk">The system clock rate</param>
+            <returns>The status</returns>
+        </member>
+        <member name="M:Iot.Device.Ft4222.FtFunction.FT4222_GetClock(Iot.Device.Ft4222.SafeFtHandle,Iot.Device.Ft4222.FtClockRate@)">
+            <summary>
+            Get the system clock
+            </summary>
+            <param name="ftHandle">The handle of the open device</param>
+            <param name="clk">The system clock rate</param>
+            <returns>The status</returns>
+        </member>
+        <member name="M:Iot.Device.Ft4222.FtFunction.FT4222_SetWakeUpInterrupt(Iot.Device.Ft4222.SafeFtHandle,System.Boolean)">
+            <summary>
+            Set the Wake Up Interrupt
+            </summary>
+            <param name="ftHandle">The handle of the open device</param>
+            <param name="enable">True to enable, false to disable</param>
+            <returns>The status</returns>
+        </member>
+        <member name="M:Iot.Device.Ft4222.FtFunction.FT4222_SetInterruptTrigger(Iot.Device.Ft4222.SafeFtHandle,Iot.Device.Ft4222.GpioTrigger)">
+            <summary>
+            Set Interrupt Trigger
+            </summary>
+            <param name="ftHandle">The handle of the open device</param>
+            <param name="trigger">The trigger type</param>
+            <returns>The status</returns>
+        </member>
+        <member name="M:Iot.Device.Ft4222.FtFunction.FT4222_SetSuspendOut(Iot.Device.Ft4222.SafeFtHandle,System.Boolean)">
+            <summary>
+            Set Suspend Out
+            </summary>
+            <param name="ftHandle">The handle of the open device</param>
+            <param name="enable">True to enable, false to disable</param>
+            <returns>The status</returns>
+        </member>
+        <member name="M:Iot.Device.Ft4222.FtFunction.FT4222_GetMaxTransferSize(Iot.Device.Ft4222.SafeFtHandle,System.UInt16@)">
+            <summary>
+            Get the maximum transfer buffer size thru USB
+            </summary>
+            <param name="ftHandle">The handle of the open device</param>
+            <param name="pMaxSize">the maximum size in bytes</param>
+            <returns>The status</returns>
+        </member>
+        <member name="M:Iot.Device.Ft4222.FtFunction.FT4222_SetEventNotification(Iot.Device.Ft4222.SafeFtHandle,System.UInt64,System.IntPtr)">
+            <summary>
+            Set event notification
+            </summary>
+            <param name="ftHandle">The handle of the open device</param>
+            <param name="mask">Event mask</param>
+            <param name="param">Event Parameter</param>
+            <returns>The status</returns>
+        </member>
+        <member name="M:Iot.Device.Ft4222.FtFunction.FT4222_GetVersion(Iot.Device.Ft4222.SafeFtHandle,Iot.Device.Ft4222.FtVersion@)">
+            <summary>
+            Get the version of the chip and dll
+            </summary>
+            <param name="ftHandle">The handle of the open device</param>
+            <param name="pVersion">A version structure</param>
+            <returns>The status</returns>
+        </member>
+        <member name="M:Iot.Device.Ft4222.FtFunction.FT4222_ChipReset(Iot.Device.Ft4222.SafeFtHandle)">
+            <summary>
+            Reset the chipset
+            </summary>
+            <param name="ftHandle">The handle of the open device</param>
+            <returns>The status</returns>
+        </member>
+        <member name="M:Iot.Device.Ft4222.FtFunction.FT4222_SPIMaster_Init(Iot.Device.Ft4222.SafeFtHandle,Iot.Device.Ft4222.SpiOperatingMode,Iot.Device.Ft4222.SpiClock,Iot.Device.Ft4222.SpiClockPolarity,Iot.Device.Ft4222.SpiClockPhase,System.Byte)">
+            <summary>
+            Initialize the chip SPI as a master
+            </summary>
+            <param name="ftHandle">The handle of the open device</param>
+            <param name="ioLine">The operation mode, none, single, dual or quad</param>
+            <param name="clock">The SPI clock divider of the system clock</param>
+            <param name="cpol">The clock polarity</param>
+            <param name="cpha">The clock phase</param>
+            <param name="ssoMap">The chip select starting by 0x01</param>
+            <returns>The status</returns>
+        </member>
+        <member name="M:Iot.Device.Ft4222.FtFunction.FT4222_SPIMaster_SetLines(Iot.Device.Ft4222.SafeFtHandle,Iot.Device.Ft4222.SpiOperatingMode)">
+            <summary>
+            Set the operation mode for SPI as a master
+            </summary>
+            <param name="ftHandle">The handle of the open device</param>
+            <param name="spiMode">The operation mode, none, single, dual or quad</param>
+            <returns>The status</returns>
+        </member>
+        <member name="M:Iot.Device.Ft4222.FtFunction.FT4222_SPIMaster_SingleRead(Iot.Device.Ft4222.SafeFtHandle,System.Byte@,System.UInt16,System.UInt16@,System.Boolean)">
+            <summary>
+            Operate a single SPI read as a master
+            </summary>
+            <param name="ftHandle">The handle of the open device</param>
+            <param name="buffer">The output read buffer</param>
+            <param name="bufferSize">The size of the buffer</param>
+            <param name="sizeOfRead">Number of bytes read</param>
+            <param name="isEndTransaction">True if this is the final SPI transaction</param>
+            <returns>The status</returns>
+        </member>
+        <member name="M:Iot.Device.Ft4222.FtFunction.FT4222_SPIMaster_SingleWrite(Iot.Device.Ft4222.SafeFtHandle,System.Byte@,System.UInt16,System.UInt16@,System.Boolean)">
+            <summary>
+            Operate a single SPI write as a master
+            </summary>
+            <param name="ftHandle">The handle of the open device</param>
+            <param name="buffer">The buffer to write</param>
+            <param name="bufferSize">The size of the buffer</param>
+            <param name="sizeTransferred">The size of the buffer</param>
+            <param name="isEndTransaction">True if this is the final SPI transaction</param>
+            <returns>The status</returns>
+        </member>
+        <member name="M:Iot.Device.Ft4222.FtFunction.FT4222_SPIMaster_SingleReadWrite(Iot.Device.Ft4222.SafeFtHandle,System.Byte@,System.Byte@,System.UInt16,System.UInt16@,System.Boolean)">
+            <summary>
+            Operate a single read and write SPI operation as a master
+            </summary>
+            <param name="ftHandle">The handle of the open device</param>
+            <param name="readBuffer">The output read buffer</param>
+            <param name="writeBuffer">The buffer to write</param>
+            <param name="bufferSize">The size of the buffer</param>
+            <param name="sizeTransferred">The size of buffer to transfer</param>
+            <param name="isEndTransaction">True if this is the final SPI transaction</param>
+            <returns>The status</returns>
+        </member>
+        <member name="M:Iot.Device.Ft4222.FtFunction.FT4222_SPIMaster_MultiReadWrite(Iot.Device.Ft4222.SafeFtHandle,System.Byte@,System.Byte@,System.Byte,System.UInt16,System.UInt16,System.UInt32@)">
+            <summary>
+            Operate multiple read and write SPI operations as a master
+            </summary>
+            <param name="ftHandle">The handle of the open device</param>
+            <param name="readBuffer">The output read buffer</param>
+            <param name="writeBuffer">The buffer to write</param>
+            <param name="singleWriteBytes">singleWriteBytes</param>
+            <param name="multiWriteBytes">multiWriteBytes</param>
+            <param name="multiReadBytes">multiReadBytes</param>
+            <param name="sizeOfRead">The size of the read buffer</param>
+            <returns>The status</returns>
+        </member>
+        <member name="M:Iot.Device.Ft4222.FtFunction.FT4222_SPISlave_Init(Iot.Device.Ft4222.SafeFtHandle)">
+            <summary>
+            Initialize the chipset as a SPI slave
+            </summary>
+            <param name="ftHandle">The handle of the open device</param>
+            <returns>The status</returns>
+        </member>
+        <member name="M:Iot.Device.Ft4222.FtFunction.FT4222_SPISlave_InitEx(Iot.Device.Ft4222.SafeFtHandle,Iot.Device.Ft4222.SpiSlaveProtocol)">
+            <summary>
+            Initialize the chipset as a SPI slave
+            </summary>
+            <param name="ftHandle">The handle of the open device</param>
+            <param name="protocolOpt">Initialize with, without protocol or never send the acknowledge</param>
+            <returns>The status</returns>
+        </member>
+        <member name="M:Iot.Device.Ft4222.FtFunction.FT4222_SPISlave_SetMode(Iot.Device.Ft4222.SafeFtHandle,Iot.Device.Ft4222.SpiClockPolarity,Iot.Device.Ft4222.SpiClockPhase)">
+            <summary>
+            Set SPI as slave clock modes
+            </summary>
+            <param name="ftHandle">The handle of the open device</param>
+            <param name="cpol">The clock polarity</param>
+            <param name="cpha">The clock phase</param>
+            <returns>The status</returns>
+        </member>
+        <member name="M:Iot.Device.Ft4222.FtFunction.FT4222_SPISlave_GetRxStatus(Iot.Device.Ft4222.SafeFtHandle,System.UInt16@)">
+            <summary>
+            Get the SPI as salve RX status
+            </summary>
+            <param name="ftHandle">The handle of the open device</param>
+            <param name="pRxSize">The RX size</param>
+            <returns>The status</returns>
+        </member>
+        <member name="M:Iot.Device.Ft4222.FtFunction.FT4222_SPISlave_Read(Iot.Device.Ft4222.SafeFtHandle,System.Byte@,System.UInt16,System.UInt16@)">
+            <summary>
+            Operate a SPI read as slave
+            </summary>
+            <param name="ftHandle">The handle of the open device</param>
+            <param name="buffer">The output read buffer</param>
+            <param name="bufferSize">The size of the buffer</param>
+            <param name="sizeOfRead">The size of the read buffer</param>
+            <returns>The status</returns>
+        </member>
+        <member name="M:Iot.Device.Ft4222.FtFunction.FT4222_SPISlave_Write(Iot.Device.Ft4222.SafeFtHandle,System.Byte@,System.UInt16,System.UInt16@)">
+            <summary>
+            Operate a SPI write as a slave
+            </summary>
+            <param name="ftHandle">The handle of the open device</param>
+            <param name="buffer">The buffer to write</param>
+            <param name="bufferSize">The size of the buffer</param>
+            <param name="sizeTransferred">The size what has been sent</param>
+            <returns>The status</returns>
+        </member>
+        <member name="M:Iot.Device.Ft4222.FtFunction.FT4222_SPISlave_RxQuickResponse(Iot.Device.Ft4222.SafeFtHandle,System.Boolean)">
+            <summary>
+            Get or set the SPI as slave Rx quick response
+            </summary>
+            <param name="ftHandle">The handle of the open device</param>
+            <param name="enable">True to enable it, false to disable it</param>
+            <returns>The status</returns>
+        </member>
+        <member name="M:Iot.Device.Ft4222.FtFunction.FT4222_SPI_Reset(Iot.Device.Ft4222.SafeFtHandle)">
+            <summary>
+            Reset the SPI
+            </summary>
+            <param name="ftHandle">The handle of the open device</param>
+            <returns>The status</returns>
+        </member>
+        <member name="M:Iot.Device.Ft4222.FtFunction.FT4222_SPI_ResetTransaction(Iot.Device.Ft4222.SafeFtHandle,System.Byte)">
+            <summary>
+            Reset a specific SPI transaction ID
+            </summary>
+            <param name="ftHandle">The handle of the open device</param>
+            <param name="spiIdx">The SPI ID</param>
+            <returns>The status</returns>
+        </member>
+        <member name="M:Iot.Device.Ft4222.FtFunction.FT4222_SPI_SetDrivingStrength(Iot.Device.Ft4222.SafeFtHandle,Iot.Device.Ft4222.PinDrivingStrength,Iot.Device.Ft4222.PinDrivingStrength,Iot.Device.Ft4222.PinDrivingStrength)">
+            <summary>
+            Set the intensity of the pin out on SPI
+            </summary>
+            <param name="ftHandle">The handle of the open device</param>
+            <param name="clkStrength">The intensity of the clock pin</param>
+            <param name="ioStrength">The intensity of the MOSI and MISO pins</param>
+            <param name="ssoStrength">The intensity of the chip select pin</param>
+            <returns>The status</returns>
+        </member>
+        <member name="M:Iot.Device.Ft4222.FtFunction.FT4222_I2CMaster_Init(Iot.Device.Ft4222.SafeFtHandle,System.UInt32)">
+            <summary>
+            Initialize the chip as an I2C master
+            </summary>
+            <param name="ftHandle">The handle of the open device</param>
+            <param name="kbps">ency in kilo Hertz</param>
+            <returns>The status</returns>
+        </member>
+        <member name="M:Iot.Device.Ft4222.FtFunction.FT4222_I2CMaster_Read(Iot.Device.Ft4222.SafeFtHandle,System.UInt16,System.Byte@,System.UInt16,System.UInt16@)">
+            <summary>
+            Operate an I2C read as a master
+            </summary>
+            <param name="ftHandle">The handle of the open device</param>
+            <param name="deviceAddress">The device address</param>
+            <param name="buffer">The output read buffer</param>
+            <param name="bufferSize">The size of the buffer</param>
+            <param name="sizeTransferred">The size of the transfer</param>
+            <returns>The status</returns>
+        </member>
+        <member name="M:Iot.Device.Ft4222.FtFunction.FT4222_I2CMaster_Write(Iot.Device.Ft4222.SafeFtHandle,System.UInt16,System.Byte@,System.UInt16,System.UInt16@)">
+            <summary>
+            Operate an I2C write as a master
+            </summary>
+            <param name="ftHandle">The handle of the open device</param>
+            <param name="deviceAddress">The device address</param>
+            <param name="buffer">The buffer to write</param>
+            <param name="bufferSize">The size of the buffer</param>
+            <param name="sizeTransferred">The size of the transfer</param>
+            <returns>The status</returns>
+        </member>
+        <member name="M:Iot.Device.Ft4222.FtFunction.FT4222_I2CMaster_ReadEx(Iot.Device.Ft4222.SafeFtHandle,System.UInt16,System.Byte,System.Byte@,System.UInt16,System.UInt16@)">
+            <summary>
+            Operate an I2C read as a master
+            </summary>
+            <param name="ftHandle">The handle of the open device</param>
+            <param name="deviceAddress">The device address to read</param>
+            <param name="flag">flag</param>
+            <param name="buffer">The output read buffer</param>
+            <param name="bufferSize">The size of the buffer</param>
+            <param name="sizeTransferred">The size of the transfer</param>
+            <returns>The status</returns>
+        </member>
+        <member name="M:Iot.Device.Ft4222.FtFunction.FT4222_I2CMaster_WriteEx(Iot.Device.Ft4222.SafeFtHandle,System.UInt16,System.Byte,System.Byte@,System.UInt16,System.UInt16@)">
+            <summary>
+            Operate an I2C write as a master
+            </summary>
+            <param name="ftHandle">The handle of the open device</param>
+            <param name="deviceAddress">The device address to read</param>
+            <param name="flag">flag</param>
+            <param name="buffer">The buffer to write</param>
+            <param name="bufferSize">The size of the buffer</param>
+            <param name="sizeTransferred">The size of the transfer</param>
+            <returns>The status</returns>
+        </member>
+        <member name="M:Iot.Device.Ft4222.FtFunction.FT4222_I2CMaster_Reset(Iot.Device.Ft4222.SafeFtHandle)">
+            <summary>
+            Reset I2C as a master
+            </summary>
+            <param name="ftHandle">The handle of the open device</param>
+            <returns>The status</returns>
+        </member>
+        <member name="M:Iot.Device.Ft4222.FtFunction.FT4222_I2CMaster_GetStatus(Iot.Device.Ft4222.SafeFtHandle,System.Byte@)">
+            <summary>
+            Get the I2C status as a master
+            </summary>
+            <param name="ftHandle">The handle of the open device</param>
+            <param name="controllerStatus">Returns the controller status byte</param>
+            <returns>The status</returns>
+        </member>
+        <member name="M:Iot.Device.Ft4222.FtFunction.FT4222_I2CSlave_Init(Iot.Device.Ft4222.SafeFtHandle)">
+            <summary>
+            Initialize the chip as an I2C slave
+            </summary>
+            <param name="ftHandle">The handle of the open device</param>
+            <returns>The status</returns>
+        </member>
+        <member name="M:Iot.Device.Ft4222.FtFunction.FT4222_I2CSlave_Reset(Iot.Device.Ft4222.SafeFtHandle)">
+            <summary>
+            Reset the I2C as a slave
+            </summary>
+            <param name="ftHandle">The handle of the open device</param>
+            <returns>The status</returns>
+        </member>
+        <member name="M:Iot.Device.Ft4222.FtFunction.FT4222_I2CSlave_GetAddress(Iot.Device.Ft4222.SafeFtHandle,System.Byte@)">
+            <summary>
+            Get the I2C address as a slave
+            </summary>
+            <param name="ftHandle">The handle of the open device</param>
+            <param name="addr">The I2C device address</param>
+            <returns>The status</returns>
+        </member>
+        <member name="M:Iot.Device.Ft4222.FtFunction.FT4222_I2CSlave_SetAddress(Iot.Device.Ft4222.SafeFtHandle,System.Byte)">
+            <summary>
+            Get the I2C address as a slave
+            </summary>
+            <param name="ftHandle">The handle of the open device</param>
+            <param name="addr">The I2C device address</param>
+            <returns>The status</returns>
+        </member>
+        <member name="M:Iot.Device.Ft4222.FtFunction.FT4222_I2CSlave_GetRxStatus(Iot.Device.Ft4222.SafeFtHandle,System.UInt16@)">
+            <summary>
+            Get the I2C as a slave RX status
+            </summary>
+            <param name="ftHandle">The handle of the open device</param>
+            <param name="pRxSize">the RX size</param>
+            <returns>The status</returns>
+        </member>
+        <member name="M:Iot.Device.Ft4222.FtFunction.FT4222_I2CSlave_Read(Iot.Device.Ft4222.SafeFtHandle,System.Byte@,System.UInt16,System.UInt16@)">
+            <summary>
+            Operate an I2C read as a slave
+            </summary>
+            <param name="ftHandle">The handle of the open device</param>
+            <param name="buffer">The output read buffer</param>
+            <param name="bufferSize">The size of the buffer</param>
+            <param name="sizeTransferred">The size of the transfer</param>
+            <returns>The status</returns>
+        </member>
+        <member name="M:Iot.Device.Ft4222.FtFunction.FT4222_I2CSlave_Write(Iot.Device.Ft4222.SafeFtHandle,System.Byte@,System.UInt16,System.UInt16@)">
+            <summary>
+            Write on the I2C device as slave
+            </summary>
+            <param name="ftHandle">The handle of the open device</param>
+            <param name="buffer">The buffer to write</param>
+            <param name="bufferSize">The size of the buffer</param>
+            <param name="sizeTransferred">The size of the transfer</param>
+            <returns>The status</returns>
+        </member>
+        <member name="M:Iot.Device.Ft4222.FtFunction.FT4222_I2CSlave_SetClockStretch(Iot.Device.Ft4222.SafeFtHandle,System.Boolean)">
+            <summary>
+            Set I2C as a slave clock stretch
+            </summary>
+            <param name="ftHandle">The handle of the open device</param>
+            <param name="enable">True to enable, false to disable</param>
+            <returns>The status</returns>
+        </member>
+        <member name="M:Iot.Device.Ft4222.FtFunction.FT4222_I2CSlave_SetRespWord(Iot.Device.Ft4222.SafeFtHandle,System.Byte)">
+            <summary>
+            Set I2C as a slave response word
+            </summary>
+            <param name="ftHandle">The handle of the open device</param>
+            <param name="responseWord">The response word</param>
+            <returns>The status</returns>
+        </member>
+        <member name="M:Iot.Device.Ft4222.FtFunction.FT4222_GPIO_Init(Iot.Device.Ft4222.SafeFtHandle,Iot.Device.Ft4222.GpioPinMode[])">
+            <summary>
+            Initialize the chip as GPIO
+            </summary>
+            <param name="ftHandle">The handle of the open device</param>
+            <param name="gpioDir">Array of pin configuration</param>
+            <returns>The status</returns>
+        </member>
+        <member name="M:Iot.Device.Ft4222.FtFunction.FT4222_GPIO_Read(Iot.Device.Ft4222.SafeFtHandle,Iot.Device.Ft4222.GpioPort,Iot.Device.Ft4222.GpioPinValue@)">
+            <summary>
+            Operate a GPIO read
+            </summary>
+            <param name="ftHandle">The handle of the open device</param>
+            <param name="portNum">The pin port</param>
+            <param name="value">True if high, false if low</param>
+            <returns>The status</returns>
+        </member>
+        <member name="M:Iot.Device.Ft4222.FtFunction.FT4222_GPIO_Write(Iot.Device.Ft4222.SafeFtHandle,Iot.Device.Ft4222.GpioPort,Iot.Device.Ft4222.GpioPinValue)">
+            <summary>
+            Operate a GPIO write
+            </summary>
+            <param name="ftHandle">The handle of the open device</param>
+            <param name="portNum">The pin port</param>
+            <param name="bValue">True if high, false if low</param>
+            <returns>The status</returns>
+        </member>
+        <member name="M:Iot.Device.Ft4222.FtFunction.FT4222_GPIO_SetInputTrigger(Iot.Device.Ft4222.SafeFtHandle,Iot.Device.Ft4222.GpioPort,Iot.Device.Ft4222.GpioTrigger)">
+            <summary>
+            Set the GPIO input trigger
+            </summary>
+            <param name="ftHandle">The handle of the open device</param>
+            <param name="portNum">The pin port</param>
+            <param name="trigger">The trigger type</param>
+            <returns>The status</returns>
+        </member>
+        <member name="M:Iot.Device.Ft4222.FtFunction.FT4222_GPIO_GetTriggerStatus(Iot.Device.Ft4222.SafeFtHandle,Iot.Device.Ft4222.GpioPort,System.UInt16@)">
+            <summary>
+            Get the GPIO trigger status
+            </summary>
+            <param name="ftHandle">The handle of the open device</param>
+            <param name="portNum">The pin port</param>
+            <param name="queueSize">The queue size</param>
+            <returns>The status</returns>
+        </member>
+        <member name="M:Iot.Device.Ft4222.FtFunction.FT4222_GPIO_ReadTriggerQueue(Iot.Device.Ft4222.SafeFtHandle,Iot.Device.Ft4222.GpioPort,Iot.Device.Ft4222.GpioTrigger@,System.UInt16,System.UInt16@)">
+            <summary>
+            Read the GPIO Trigger queue
+            </summary>
+            <param name="ftHandle">The handle of the open device</param>
+            <param name="portNum">The pin port</param>
+            <param name="events">Type of event</param>
+            <param name="readSize">The number of events read</param>
+            <param name="sizeofRead">The size of the read buffer</param>
+            <returns>The status</returns>
+        </member>
+        <member name="M:Iot.Device.Ft4222.FtFunction.FT4222_GPIO_SetWaveFormMode(Iot.Device.Ft4222.SafeFtHandle,System.Boolean)">
+            <summary>
+            Set the GPIO in wave form
+            </summary>
+            <param name="ftHandle">The handle of the open device</param>
+            <param name="enable">True to enable, false to disable</param>
+            <returns>The status</returns>
+        </member>
+        <member name="T:Iot.Device.Ft4222.FtOpenType">
+            <summary>
+            How to open the FTDI chip
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtOpenType.OpenBySerialNumber">
+            <summary>
+            Open by serial number
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtOpenType.OpenByDescription">
+            <summary>
+            Open by description
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtOpenType.OpenByLocation">
+            <summary>
+            Open by location
+            </summary>
+        </member>
+        <member name="T:Iot.Device.Ft4222.FtStatus">
+            <summary>
+            Errors for FT4222
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtStatus.Ok">
+            <summary>
+            Status OK
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtStatus.InvalidHandle">
+            <summary>
+            The device handle is invalid
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtStatus.DeviceNotFound">
+            <summary>
+            Device not found
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtStatus.DeviceNotOpen">
+            <summary>
+            Device is not open
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtStatus.IoError">
+            <summary>
+            IO error
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtStatus.InsufficientResources">
+            <summary>
+            Insufficient resources
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtStatus.InvalidParameter">
+            <summary>
+            A parameter was invalid
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtStatus.InvalidBaudRate">
+            <summary>
+            The requested baud rate is invalid
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtStatus.DeviceNotOpenForErase">
+            <summary>
+            Device not opened for erase
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtStatus.DeviceNotOpenForWrite">
+            <summary>
+            Device not opened for write
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtStatus.FailedToWriteToDevice">
+            <summary>
+            Failed to write to device
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtStatus.EepromFailedToRead">
+            <summary>
+            Failed to read the device EEPROM
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtStatus.EepromFailedToWrite">
+            <summary>
+            Failed to write the device EEPROM
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtStatus.EepromFailedToErase">
+            <summary>
+            Failed to erase the device EEPROM
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtStatus.EepromNotPresent">
+            <summary>
+            An EEPROM is not fitted to the device
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtStatus.EepromNotProgrammed">
+            <summary>
+            Device EEPROM is blank
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtStatus.InvalidArguments">
+            <summary>
+            Invalid arguments
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtStatus.OtherError">
+            <summary>
+            An other error has occurred
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtStatus.DeviceListNotReady">
+            <summary>
+            The device list is not ready
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtStatus.DeviceNotSupported">
+            <summary>
+            Device not supported
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtStatus.SpiMasterClockNotSupported">
+            <summary>
+            Spi master do not support 80MHz/CLK_2
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtStatus.VenderCommandNotSupported">
+            <summary>
+            Vender command not supported
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtStatus.Ft4222IsNotSpiMode">
+            <summary>
+            FT4222 is not in SPI mode
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtStatus.Ft4222IsNotI2cMode">
+            <summary>
+            FT4222 is not in I2C mode
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtStatus.Ft4222IsNotSpiSingleMode">
+            <summary>
+            FT4222 is not in SPI single mode
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtStatus.Ft4222IsNotSpiMultiMode">
+            <summary>
+            FT4222 is not in SPI multi mode
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtStatus.WrongI2cAddress">
+            <summary>
+            Wrong I2C address
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtStatus.InvalidFunction">
+            <summary>
+            Invalid function
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtStatus.InvalidPointer">
+            <summary>
+            Invalid pointer
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtStatus.ExceededMaximumTransferSize">
+            <summary>
+            Exceeded maximum transfer size
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtStatus.FailedToReadDevice">
+            <summary>
+            Failed to read device
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtStatus.I2cNotSupportedInThisMode">
+            <summary>
+            I2C is not supported in this mode
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtStatus.GpioNotSupportedInThisMode">
+            <summary>
+            GPIO is not supported in this mode
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtStatus.GpioExceededMaximumPortNumber">
+            <summary>
+            GPIO exceeded maximum port number
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtStatus.GpioWriteNotSupported">
+            <summary>
+            GPIO write not supported
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtStatus.GpioPullUpInvalidInInputMode">
+            <summary>
+            GPIO pull up invalid in input mode
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtStatus.GpioPullDownInvalidInInputMode">
+            <summary>
+            GPIO pull down invalid in input mode
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtStatus.GpioOpenDrainInvalidInOutputMode">
+            <summary>
+            GPIO open drain invalid in output mode
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtStatus.InterruptNotSupported">
+            <summary>
+            Interrupt not supported
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtStatus.GpioInputNotSupported">
+            <summary>
+            GPIO input not supported
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtStatus.EventNotSupported">
+            <summary>
+            Event not supported
+            </summary>
+        </member>
+        <member name="T:Iot.Device.Ft4222.FtVersion">
+            <summary>
+            Contains the chip and Dll versions
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtVersion.ChipVersion">
+            <summary>
+            Chip version
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.FtVersion.DllVersion">
+            <summary>
+            Dll version
+            </summary>
+        </member>
+        <member name="T:Iot.Device.Ft4222.GpioPinMode">
+            <summary>
+            GPIO Pin Mode called Direction with FTDI
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.GpioPinMode.Output">
+            <summary>
+            Output
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.GpioPinMode.Input">
+            <summary>
+            Input
+            </summary>
+        </member>
+        <member name="T:Iot.Device.Ft4222.GpioPinValue">
+            <summary>
+            Used for the digital pin values
+            </summary>
+        </member>
+        <member name="T:Iot.Device.Ft4222.GpioPort">
+            <summary>
+            GPIO numbers called Port with FTDI
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.GpioPort.Gpio0">
+            <summary>
+            GPIO 0
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.GpioPort.Gpio1">
+            <summary>
+            GPIO 1
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.GpioPort.Gpio2">
+            <summary>
+            GPIO 2
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.GpioPort.Gpio3">
+            <summary>
+            GPIO 3
+            </summary>
+        </member>
+        <member name="T:Iot.Device.Ft4222.GpioTrigger">
+            <summary>
+            Triggers for the GPIO events
+            </summary>
+        </member>
+        <member name="T:Iot.Device.Ft4222.I2cMasterFlag">
+            <summary>
+            I2C Master Flag
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.I2cMasterFlag.None">
+            <summary>
+            No specific flag
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.I2cMasterFlag.Start">
+            <summary>
+            Send start
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.I2cMasterFlag.RepeatedStart">
+            <summary>
+            Repeated start
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.I2cMasterFlag.Stop">
+            <summary>
+            Send stop
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.I2cMasterFlag.StartAndStop">
+            <summary>
+            Start condition followed by a stop condition
+            </summary>
+        </member>
+        <member name="T:Iot.Device.Ft4222.PinDrivingStrength">
+            <summary>
+            Intensity for SPI in Milli Amperes
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.PinDrivingStrength.Intensity4Ma">
+            <summary>
+            4 Milli Amperes
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.PinDrivingStrength.Intensity8Ma">
+            <summary>
+            8 Milli Amperes
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.PinDrivingStrength.Intensity12Ma">
+            <summary>
+            12 Milli Amperes
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.PinDrivingStrength.Intensity16Ma">
+            <summary>
+            16 Milli Amperes
+            </summary>
+        </member>
+        <member name="T:Iot.Device.Ft4222.SpiClock">
+            <summary>
+            Clock dividers of the system clock for the SPI module
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.SpiClock.DivideBy1">
+            <summary>
+            System Clock (ClockRate)
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.SpiClock.DivideBy2">
+            <summary>
+            1/2 System Clock (ClockRate)
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.SpiClock.DivideBy4">
+            <summary>
+             1/4 System Clock (ClockRate)
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.SpiClock.DivideBy8">
+            <summary>
+            1/8 System Clock (ClockRate)
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.SpiClock.DivideBy16">
+            <summary>
+            1/16 System Clock (ClockRate)
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.SpiClock.DivideBy32">
+            <summary>
+            1/32 System Clock (ClockRate)
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.SpiClock.DivideBy64">
+            <summary>
+            1/64 System Clock (ClockRate)
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.SpiClock.DivideBy128">
+            <summary>
+            1/128 System Clock (ClockRate)
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.SpiClock.DivideBy256">
+            <summary>
+            1/256 System Clock (ClockRate)
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.SpiClock.DivideBy512">
+            <summary>
+            1/512 System Clock (ClockRate)
+            </summary>
+        </member>
+        <member name="T:Iot.Device.Ft4222.SpiClockPhase">
+            <summary>
+            SPI Clock Phase
+            </summary>
+        </member>
+        <member name="T:Iot.Device.Ft4222.SpiClockPolarity">
+            <summary>
+            SPI Clock Polarity
+            </summary>
+        </member>
+        <member name="T:Iot.Device.Ft4222.SpiOperatingMode">
+            <summary>
+            SPI Operation mode as single, dual or quad SPI
+            </summary>
+        </member>
+        <member name="T:Iot.Device.Ft4222.SpiSlaveProtocol">
+            <summary>
+            SPI as slave protocol
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.SpiSlaveProtocol.WithProtocol">
+            <summary>
+            With Protocol
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.SpiSlaveProtocol.WithoutProtocol">
+            <summary>
+            Without Protocol
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ft4222.SpiSlaveProtocol.NeverSendAcknowledge">
+            <summary>
+            Never send acknowledge
+            </summary>
+        </member>
+    </members>
+</doc>
