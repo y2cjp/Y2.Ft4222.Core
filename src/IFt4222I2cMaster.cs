@@ -7,6 +7,9 @@ using Iot.Device.Ft4222;
 
 namespace Y2.Ft4222.Core
 {
+    /// <summary>
+    /// Interface for a FT4222 I2C Master Device
+    /// </summary>
     public interface IFt4222I2cMaster
     {
         /// <summary>The speed of I2C transmission.</summary>

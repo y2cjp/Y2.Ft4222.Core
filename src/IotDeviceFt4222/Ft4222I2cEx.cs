@@ -41,6 +41,11 @@ namespace Iot.Device.Ft4222
         {
         }
 
+        /// <summary>
+        /// Create a FT4222 I2C Device
+        /// </summary>
+        /// <param name="settings">I2C Connection Settings</param>
+        /// <param name="frequencyKbps">The speed of I2C transmission.</param>
         public Ft4222I2cEx(I2cConnectionSettings settings, uint frequencyKbps = I2cMasterFrequencyKbps)
         {
             _settings = settings ?? throw new ArgumentNullException(nameof(settings));
@@ -137,6 +142,10 @@ namespace Iot.Device.Ft4222
             Read(readBuffer);
         }
 
+        /// <summary>
+        /// Get the version of the chip and dll
+        /// </summary>
+        /// <returns>version</returns>
         public (Version chip, Version dll) GetVersions()
         {
             var ftStatus = FtFunction.FT4222_GetVersion(_ftHandle, out var ftVersion);

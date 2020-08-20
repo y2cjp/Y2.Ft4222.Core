@@ -16,6 +16,7 @@ using System.Diagnostics.CodeAnalysis;
 
 [assembly: SuppressMessage("Design", "CA1060:pinvoke をネイティブ メソッド クラスに移動します", Justification = "<保留中>", Scope = "type", Target = "Iot.Device.Ft4222.FtFunction")]
 [assembly: SuppressMessage("StyleCop.CSharp.OrderingRules", "SA1202:Elements should be ordered by access", Justification = "<保留中>", Scope = "type", Target = "Iot.Device.Ft4222.FtFunction")]
+[assembly: SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1625:Element documentation should not be copied and pasted", Justification = "<保留中>", Scope = "type", Target = "Iot.Device.Ft4222.FtFunction")]
 
 [assembly: SuppressMessage("Design", "CA1051:参照可能なインスタンス フィールドを宣言しません", Justification = "<保留中>", Scope = "type", Target = "Iot.Device.Ft4222.FtVersion")]
 [assembly: SuppressMessage("Performance", "CA1815:equals および operator equals を値型でオーバーライドします", Justification = "<保留中>", Scope = "type", Target = "Iot.Device.Ft4222.FtVersion")]
@@ -23,6 +24,7 @@ using System.Diagnostics.CodeAnalysis;
 [assembly: SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1117:Parameters should be on same line or separate lines", Justification = "<保留中>", Scope = "type", Target = "Iot.Device.Ft4222.Ft4222I2cEx")]
 [assembly: SuppressMessage("StyleCop.CSharp.OrderingRules", "SA1201:Elements should appear in the correct order", Justification = "<保留中>", Scope = "type", Target = "Iot.Device.Ft4222.Ft4222I2cEx")]
 [assembly: SuppressMessage("StyleCop.CSharp.LayoutRules", "SA1515:Single-line comment should be preceded by blank line", Justification = "<保留中>", Scope = "type", Target = "Iot.Device.Ft4222.Ft4222I2cEx")]
+[assembly: SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1642:Constructor summary documentation should begin with standard text", Justification = "<保留中>", Scope = "type", Target = "Iot.Device.Ft4222.Ft4222I2cEx")]
 
 [assembly: SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1101:Prefix local calls with this", Justification = "<保留中>")]
 [assembly: SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1124:Do not use regions", Justification = "<保留中>")]

@@ -9,6 +9,9 @@ using Iot.Device.Ft4222;
 
 namespace Y2.Ft4222.Core
 {
+    /// <summary>
+    /// FT4222 I2C Master Device
+    /// </summary>
     public class Ft4222I2cMaster : Ft4222I2cEx, IFt4222I2cMaster
     {
         private readonly Ft4222I2cConnectionSettings _settings;
@@ -24,6 +27,7 @@ namespace Y2.Ft4222.Core
             _settings = settings;
         }
 
+        /// <inheritdoc/>
         public void Read(int slaveAddress, Span<byte> buffer)
         {
             var ftStatus = FtFunction.FT4222_I2CMaster_Read(FtHandle, (ushort)slaveAddress, in MemoryMarshal.GetReference(buffer), (ushort)buffer.Length, out _);
@@ -33,6 +37,7 @@ namespace Y2.Ft4222.Core
             }
         }
 
+        /// <inheritdoc/>
         public void Write(int slaveAddress, ReadOnlySpan<byte> buffer)
         {
             var ftStatus = FtFunction.FT4222_I2CMaster_Write(FtHandle, (ushort)slaveAddress, in MemoryMarshal.GetReference(buffer), (ushort)buffer.Length, out _);
@@ -42,11 +47,13 @@ namespace Y2.Ft4222.Core
             }
         }
 
+        /// <inheritdoc/>
         public void ReadEx(I2cMasterFlag flags, Span<byte> buffer)
         {
             ReadEx(_settings.DeviceAddress, flags, buffer);
         }
 
+        /// <inheritdoc/>
         public void ReadEx(int slaveAddress, I2cMasterFlag flags, Span<byte> buffer)
         {
             var result = FtFunction.FT4222_I2CMaster_ReadEx(FtHandle, (ushort)slaveAddress, (byte)flags, in MemoryMarshal.GetReference(buffer), (ushort)buffer.Length, out _);
@@ -54,11 +61,13 @@ namespace Y2.Ft4222.Core
                 throw new IOException();
         }
 
+        /// <inheritdoc/>
         public void WriteEx(I2cMasterFlag flags, ReadOnlySpan<byte> buffer)
         {
             WriteEx(_settings.DeviceAddress, flags, buffer);
         }
 
+        /// <inheritdoc/>
         public void WriteEx(int slaveAddress, I2cMasterFlag flags, ReadOnlySpan<byte> buffer)
         {
             var ftStatus = FtFunction.FT4222_I2CMaster_WriteEx(FtHandle, (ushort)slaveAddress, (byte)flags, in MemoryMarshal.GetReference(buffer), (ushort)buffer.Length, out _);
@@ -68,6 +77,7 @@ namespace Y2.Ft4222.Core
             }
         }
 
+        /// <inheritdoc/>
         public void Reset()
         {
             var ftStatus = FtFunction.FT4222_I2CMaster_Reset(FtHandle);
@@ -77,6 +87,7 @@ namespace Y2.Ft4222.Core
             }
         }
 
+        /// <inheritdoc/>
         public byte GetStatus()
         {
             var ftStatus = FtFunction.FT4222_I2CMaster_GetStatus(FtHandle, out var controllerStatus);
@@ -88,6 +99,7 @@ namespace Y2.Ft4222.Core
             return controllerStatus;
         }
 
+        /// <inheritdoc/>
         public FtVersion GetVersionValues()
         {
             var ftStatus = FtFunction.FT4222_GetVersion(FtHandle, out var ftVersion);
@@ -99,6 +111,7 @@ namespace Y2.Ft4222.Core
             return ftVersion;
         }
 
+        /// <inheritdoc/>
         protected override void Dispose(bool disposing)
         {
             if (disposed)

@@ -7,6 +7,9 @@ using Iot.Device.Ft4222;
 
 namespace Y2.Ft4222.Core
 {
+    /// <summary>
+    /// FT4222 I2C Slave Device
+    /// </summary>
     public class Ft4222I2cSlaveDevice
     {
         private readonly IFt4222I2cMaster _i2cMaster;
@@ -15,7 +18,7 @@ namespace Y2.Ft4222.Core
         /// <summary>
         /// Initializes a new instance of the <see cref="Ft4222I2cSlaveDevice"/> class.
         /// </summary>
-        /// <param name="i2cMaster">The I2C master device</param>
+        /// <param name="i2cMaster">The I2C master device.</param>
         /// <param name="slaveAddress">The bus address of the I2C device.</param>
         public Ft4222I2cSlaveDevice(IFt4222I2cMaster i2cMaster, int slaveAddress)
         {

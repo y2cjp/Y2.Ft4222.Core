@@ -10,6 +10,11 @@ Windows・Linux・MacOSで使用できます。
 
 ## セットアップ方法
 
+Visual StudioのNuGetパッケージマネージャー または [NuGet.org](https://www.nuget.org/) から「Y2.Ft4222.Core」を検索してインストールしてください。  
+* [NuGet.orgのY2.Ft4222.Coreページ](https://www.nuget.org/packages/Y2.Ft4222.Core/)  
+
+FTDI社のライブラリ（デバイスドライバ含む）のインストールも必要ですので、以下の各OSの手順にしたがってインストールしてください。
+
 Windows 64bit
 
 1. [FT4222Hの製品ページ](https://www.ftdichip.com/Products/ICs/FT4222H.html) から「LibFT4222 Windows Library」をダウンロードして解凍します。  
@@ -59,7 +64,7 @@ $ sudo cp boost_libs/libboost_thread-mt.dylib /usr/local/lib/libboost_thread-mt.
 ## 使用方法
 
 ```csharp
-// スレーブアドレス 0x26のデバイスにアクセス。I2Cクロック周波数は400kHz。
+// スレーブアドレス 0x26のデバイスにアクセスできるようにインスタンスを生成。I2Cクロック周波数は400kHz。
 var i2c = new Ft4222I2cMaster(new Ft4222I2cConnectionSettings(0, 0x26, 400));
 
 // 読み出し
