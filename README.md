@@ -75,11 +75,11 @@ i2c.Read(buffer);
 byte[] writeBuffer = { 0x12, 0x34 };
 i2c.Write(writeBuffer);
 
-// I2cMasterFlagを指定しての読み出し
-i2c.ReadEx(I2cMasterFlag.RepeatedStart, buffer);
+// I2cMasterFlagsを指定しての読み出し
+i2c.ReadEx(I2cMasterFlags.RepeatedStart, buffer);
 
-// I2cMasterFlagを指定しての書き込み
-i2c.WriteEx(I2cMasterFlag.RepeatedStart, writeBuffer);
+// I2cMasterFlagsを指定しての書き込み
+i2c.WriteEx(I2cMasterFlags.RepeatedStart, writeBuffer);
 
 // Ft4222I2cMasterインスタンス生成時と異なるデバイス（スレーブアドレス 0x23）から読み出し
 i2c.Read(0x23, buffer);
