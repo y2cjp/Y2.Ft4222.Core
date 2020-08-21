@@ -3,7 +3,6 @@
 // Copyright (c) Y2 Corporation
 
 using System;
-using Iot.Device.Ft4222;
 
 namespace Y2.Ft4222.Core
 {
@@ -43,7 +42,7 @@ namespace Y2.Ft4222.Core
         /// <summary>Reads data from the I2C device.</summary>
         /// <param name="flags">flags</param>
         /// <param name="buffer">The buffer to read the data from the I2C device.</param>
-        public void ReadEx(I2cMasterFlag flags, Span<byte> buffer)
+        public void ReadEx(I2cMasterFlags flags, Span<byte> buffer)
         {
             _i2cMaster.ReadEx(_slaveAddress, flags, buffer);
         }
@@ -51,7 +50,7 @@ namespace Y2.Ft4222.Core
         /// <summary>Writes data to the I2C device.</summary>
         /// <param name="flags">flags</param>
         /// <param name="buffer">The buffer that contains the data to be written to the I2C device.</param>
-        public void WriteEx(I2cMasterFlag flags, ReadOnlySpan<byte> buffer)
+        public void WriteEx(I2cMasterFlags flags, ReadOnlySpan<byte> buffer)
         {
             _i2cMaster.WriteEx(_slaveAddress, flags, buffer);
         }

@@ -36,24 +36,24 @@ namespace Y2.Ft4222.Core
         /// <summary>Reads data from the I2C device.</summary>
         /// <param name="flags">flags</param>
         /// <param name="buffer">The buffer to read the data from the I2C device.</param>
-        void ReadEx(I2cMasterFlag flags, Span<byte> buffer);
+        void ReadEx(I2cMasterFlags flags, Span<byte> buffer);
 
         /// <summary>Reads data from the I2C device.</summary>
         /// <param name="slaveAddress">The bus address of the I2C device.</param>
         /// <param name="flags">flags</param>
         /// <param name="buffer">The buffer to read the data from the I2C device.</param>
-        void ReadEx(int slaveAddress, I2cMasterFlag flags, Span<byte> buffer);
+        void ReadEx(int slaveAddress, I2cMasterFlags flags, Span<byte> buffer);
 
         /// <summary>Writes data to the I2C device.</summary>
         /// <param name="flags">flags</param>
         /// <param name="buffer">The buffer that contains the data to be written to the I2C device.</param>
-        void WriteEx(I2cMasterFlag flags, ReadOnlySpan<byte> buffer);
+        void WriteEx(I2cMasterFlags flags, ReadOnlySpan<byte> buffer);
 
         /// <summary>Writes data to the I2C device.</summary>
         /// <param name="slaveAddress">The bus address of the I2C device.</param>
         /// <param name="flags">flags</param>
         /// <param name="buffer">The buffer that contains the data to be written to the I2C device.</param>
-        void WriteEx(int slaveAddress, I2cMasterFlag flags, ReadOnlySpan<byte> buffer);
+        void WriteEx(int slaveAddress, I2cMasterFlags flags, ReadOnlySpan<byte> buffer);
 
         /// <summary>Reset I2C as a master</summary>
         void Reset();

@@ -48,13 +48,13 @@ namespace Y2.Ft4222.Core
         }
 
         /// <inheritdoc/>
-        public void ReadEx(I2cMasterFlag flags, Span<byte> buffer)
+        public void ReadEx(I2cMasterFlags flags, Span<byte> buffer)
         {
             ReadEx(_settings.DeviceAddress, flags, buffer);
         }
 
         /// <inheritdoc/>
-        public void ReadEx(int slaveAddress, I2cMasterFlag flags, Span<byte> buffer)
+        public void ReadEx(int slaveAddress, I2cMasterFlags flags, Span<byte> buffer)
         {
             var result = FtFunction.FT4222_I2CMaster_ReadEx(FtHandle, (ushort)slaveAddress, (byte)flags, in MemoryMarshal.GetReference(buffer), (ushort)buffer.Length, out _);
             if (result != FtStatus.Ok)
@@ -62,13 +62,13 @@ namespace Y2.Ft4222.Core
         }
 
         /// <inheritdoc/>
-        public void WriteEx(I2cMasterFlag flags, ReadOnlySpan<byte> buffer)
+        public void WriteEx(I2cMasterFlags flags, ReadOnlySpan<byte> buffer)
         {
             WriteEx(_settings.DeviceAddress, flags, buffer);
         }
 
         /// <inheritdoc/>
-        public void WriteEx(int slaveAddress, I2cMasterFlag flags, ReadOnlySpan<byte> buffer)
+        public void WriteEx(int slaveAddress, I2cMasterFlags flags, ReadOnlySpan<byte> buffer)
         {
             var ftStatus = FtFunction.FT4222_I2CMaster_WriteEx(FtHandle, (ushort)slaveAddress, (byte)flags, in MemoryMarshal.GetReference(buffer), (ushort)buffer.Length, out _);
             if (ftStatus != FtStatus.Ok)
