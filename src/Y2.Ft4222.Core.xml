@@ -59,16 +59,16 @@
         <member name="M:Y2.Ft4222.Core.Ft4222I2cMaster.Write(System.Int32,System.ReadOnlySpan{System.Byte})">
             <inheritdoc/>
         </member>
-        <member name="M:Y2.Ft4222.Core.Ft4222I2cMaster.ReadEx(Iot.Device.Ft4222.I2cMasterFlag,System.Span{System.Byte})">
+        <member name="M:Y2.Ft4222.Core.Ft4222I2cMaster.ReadEx(Y2.Ft4222.Core.I2cMasterFlags,System.Span{System.Byte})">
             <inheritdoc/>
         </member>
-        <member name="M:Y2.Ft4222.Core.Ft4222I2cMaster.ReadEx(System.Int32,Iot.Device.Ft4222.I2cMasterFlag,System.Span{System.Byte})">
+        <member name="M:Y2.Ft4222.Core.Ft4222I2cMaster.ReadEx(System.Int32,Y2.Ft4222.Core.I2cMasterFlags,System.Span{System.Byte})">
             <inheritdoc/>
         </member>
-        <member name="M:Y2.Ft4222.Core.Ft4222I2cMaster.WriteEx(Iot.Device.Ft4222.I2cMasterFlag,System.ReadOnlySpan{System.Byte})">
+        <member name="M:Y2.Ft4222.Core.Ft4222I2cMaster.WriteEx(Y2.Ft4222.Core.I2cMasterFlags,System.ReadOnlySpan{System.Byte})">
             <inheritdoc/>
         </member>
-        <member name="M:Y2.Ft4222.Core.Ft4222I2cMaster.WriteEx(System.Int32,Iot.Device.Ft4222.I2cMasterFlag,System.ReadOnlySpan{System.Byte})">
+        <member name="M:Y2.Ft4222.Core.Ft4222I2cMaster.WriteEx(System.Int32,Y2.Ft4222.Core.I2cMasterFlags,System.ReadOnlySpan{System.Byte})">
             <inheritdoc/>
         </member>
         <member name="M:Y2.Ft4222.Core.Ft4222I2cMaster.Reset">
@@ -103,15 +103,45 @@
             <summary>Writes data to the I2C device.</summary>
             <param name="buffer">The buffer that contains the data to be written to the I2C device.</param>
         </member>
-        <member name="M:Y2.Ft4222.Core.Ft4222I2cSlaveDevice.ReadEx(Iot.Device.Ft4222.I2cMasterFlag,System.Span{System.Byte})">
+        <member name="M:Y2.Ft4222.Core.Ft4222I2cSlaveDevice.ReadEx(Y2.Ft4222.Core.I2cMasterFlags,System.Span{System.Byte})">
             <summary>Reads data from the I2C device.</summary>
             <param name="flags">flags</param>
             <param name="buffer">The buffer to read the data from the I2C device.</param>
         </member>
-        <member name="M:Y2.Ft4222.Core.Ft4222I2cSlaveDevice.WriteEx(Iot.Device.Ft4222.I2cMasterFlag,System.ReadOnlySpan{System.Byte})">
+        <member name="M:Y2.Ft4222.Core.Ft4222I2cSlaveDevice.WriteEx(Y2.Ft4222.Core.I2cMasterFlags,System.ReadOnlySpan{System.Byte})">
             <summary>Writes data to the I2C device.</summary>
             <param name="flags">flags</param>
             <param name="buffer">The buffer that contains the data to be written to the I2C device.</param>
+        </member>
+        <member name="T:Y2.Ft4222.Core.I2cMasterFlags">
+            <summary>
+            I2C Master Flag
+            </summary>
+        </member>
+        <member name="F:Y2.Ft4222.Core.I2cMasterFlags.None">
+            <summary>
+            No specific flag
+            </summary>
+        </member>
+        <member name="F:Y2.Ft4222.Core.I2cMasterFlags.Start">
+            <summary>
+            Send start
+            </summary>
+        </member>
+        <member name="F:Y2.Ft4222.Core.I2cMasterFlags.RepeatedStart">
+            <summary>
+            Repeated start
+            </summary>
+        </member>
+        <member name="F:Y2.Ft4222.Core.I2cMasterFlags.Stop">
+            <summary>
+            Send stop
+            </summary>
+        </member>
+        <member name="F:Y2.Ft4222.Core.I2cMasterFlags.StartAndStop">
+            <summary>
+            Start condition followed by a stop condition
+            </summary>
         </member>
         <member name="T:Y2.Ft4222.Core.IFt4222I2cMaster">
             <summary>
@@ -139,23 +169,23 @@
             <param name="slaveAddress">The bus address of the I2C device.</param>
             <param name="buffer">The buffer that contains the data to be written to the I2C device.</param>
         </member>
-        <member name="M:Y2.Ft4222.Core.IFt4222I2cMaster.ReadEx(Iot.Device.Ft4222.I2cMasterFlag,System.Span{System.Byte})">
+        <member name="M:Y2.Ft4222.Core.IFt4222I2cMaster.ReadEx(Y2.Ft4222.Core.I2cMasterFlags,System.Span{System.Byte})">
             <summary>Reads data from the I2C device.</summary>
             <param name="flags">flags</param>
             <param name="buffer">The buffer to read the data from the I2C device.</param>
         </member>
-        <member name="M:Y2.Ft4222.Core.IFt4222I2cMaster.ReadEx(System.Int32,Iot.Device.Ft4222.I2cMasterFlag,System.Span{System.Byte})">
+        <member name="M:Y2.Ft4222.Core.IFt4222I2cMaster.ReadEx(System.Int32,Y2.Ft4222.Core.I2cMasterFlags,System.Span{System.Byte})">
             <summary>Reads data from the I2C device.</summary>
             <param name="slaveAddress">The bus address of the I2C device.</param>
             <param name="flags">flags</param>
             <param name="buffer">The buffer to read the data from the I2C device.</param>
         </member>
-        <member name="M:Y2.Ft4222.Core.IFt4222I2cMaster.WriteEx(Iot.Device.Ft4222.I2cMasterFlag,System.ReadOnlySpan{System.Byte})">
+        <member name="M:Y2.Ft4222.Core.IFt4222I2cMaster.WriteEx(Y2.Ft4222.Core.I2cMasterFlags,System.ReadOnlySpan{System.Byte})">
             <summary>Writes data to the I2C device.</summary>
             <param name="flags">flags</param>
             <param name="buffer">The buffer that contains the data to be written to the I2C device.</param>
         </member>
-        <member name="M:Y2.Ft4222.Core.IFt4222I2cMaster.WriteEx(System.Int32,Iot.Device.Ft4222.I2cMasterFlag,System.ReadOnlySpan{System.Byte})">
+        <member name="M:Y2.Ft4222.Core.IFt4222I2cMaster.WriteEx(System.Int32,Y2.Ft4222.Core.I2cMasterFlags,System.ReadOnlySpan{System.Byte})">
             <summary>Writes data to the I2C device.</summary>
             <param name="slaveAddress">The bus address of the I2C device.</param>
             <param name="flags">flags</param>
