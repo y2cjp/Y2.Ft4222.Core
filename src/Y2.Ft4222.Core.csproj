@@ -1,24 +1,25 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <RunAnalyzersDuringBuild>true</RunAnalyzersDuringBuild>
     <Authors>Y2 Corporation</Authors>
     <Company>Y2 Corporation</Company>
     <Product>Y2.Ft4222.Core</Product>
     <PackageId>Y2.Ft4222.Core</PackageId>
-    <Copyright>Copyright (C) 2022 Y2 Corporation</Copyright>
-    <Version>1.0.4</Version>
-    <AssemblyVersion>0.1.0.4</AssemblyVersion>
-    <FileVersion>0.1.0.4</FileVersion>
+    <Copyright>Copyright (C) 2023 Y2 Corporation</Copyright>
+    <Version>1.0.5</Version>
+    <AssemblyVersion>0.1.0.5</AssemblyVersion>
+    <FileVersion>0.1.0.5</FileVersion>
     <Description>USB2.0 to I2C Drivers for FT4222.</Description>
-    <PackageTags>USB, I2C, FT4222H, Y2, FTDI, .NET, Core, IoT</PackageTags>
+    <PackageTags>USB, I2C, FT4222H, Y2, FTDI, .NET, IoT</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryType>git</RepositoryType>
     <PackageIcon>y2.png</PackageIcon>
     <RepositoryUrl>https://github.com/y2cjp/Y2.Ft4222.Core</RepositoryUrl>
     <PackageProjectUrl>https://github.com/y2cjp/Y2.Ft4222.Core</PackageProjectUrl>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
@@ -41,6 +42,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <None Include="..\README.md" Pack="true" PackagePath="\"/>
   </ItemGroup>
 
   <ItemGroup>
